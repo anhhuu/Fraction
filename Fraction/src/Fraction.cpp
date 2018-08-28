@@ -1,6 +1,6 @@
 //
 // Fraction library Source Code
-// Copyright (c) 2016 panhhuu.
+// Copyright (c) 2016 panhhuu
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -25,22 +25,11 @@
 
 #include "Fraction.h"
 
-CFractions::CFractions()
-{
-	this->m_numerator = 0;
-	this->m_denominator = 1;
-}
-
 CFractions::CFractions(const int numerator, const int denominator)
+	:m_numerator(numerator), m_denominator(denominator)
 {
-	this->m_numerator = numerator;
-	if(denominator == 0)
-	{
-		this->m_denominator = 1;
-	} else
-	{
-		this->m_denominator = denominator;
-	}
+	if (m_denominator == 0)
+		m_denominator = 1;
 }
 
 int CFractions::getNumerator()
@@ -423,7 +412,7 @@ std::ostream &operator<<(std::ostream &output, const CFractions &fraction)
 
 const CFractions operator+(const int & number, const CFractions & fraction)
 {
-	CFractions temp{ 1,0 };
+	CFractions temp{ 0, 1 };
 	temp = fraction + number;
 	return temp;
 }
@@ -444,7 +433,7 @@ const CFractions operator-(const int & number, const CFractions & fraction)
 
 const CFractions operator*(const int & number, const CFractions & fraction)
 {
-	CFractions temp{ 1,0 };
+	CFractions temp{ 0, 1 };
 	temp = fraction * number;
 	return temp;
 }

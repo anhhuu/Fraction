@@ -1,6 +1,6 @@
 //
 // Fraction library Source Code
-// Copyright (c) 2016 panhhuu.
+// Copyright (c) 2016 panhhuu
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -33,8 +33,7 @@ private:
 	int m_denominator;
 
 public:
-	CFractions();
-	CFractions(const int numerator, const int denominator);
+	CFractions(const int numerator = 0, const int denominator = 1);
 
 	int getNumerator();
 	void setNumerator(const int numerator);
@@ -46,7 +45,7 @@ public:
 	double convertToDouble();
 	int covertToInt();
 
-	friend std::istream &operator >> (std::istream &input, CFractions &fraction);
+	friend std::istream &operator>>(std::istream &input, CFractions &fraction);
 	friend std::ostream &operator<<(std::ostream &output, const CFractions &fraction);
 
 	const CFractions &operator=(const int number);
